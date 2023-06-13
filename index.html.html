@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/c949154629.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    *
+    {
+        margin: 0;
+        border: 0;
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    body{
+        font-family: 'Courier New', monospace;
+    }
+
+    #header{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(240, 236, 217);
+        position:sticky;
+    }
+
+    .headertitle{
+        width: auto;
+        height: auto;
+        display: block;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        top: 25%;
+        z-index: 1;
+        opacity: 1;
+    }
+
+    .headerbottom{
+        display: block;
+        position: relative;
+        top: 14px;
+        background: rgb(240, 236, 217);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 30px;
+        text-align: center;
+    }
+
+    .headerbottomcontainer{
+        display: fixed;
+        width: 600px;
+        height: 30px;
+        display:inline-flex;
+        margin:auto;
+        justify-content: space-between;
+        line-height: 30px;
+    }
+
+    .headerbottomtext{
+        font-size: large;
+        color: black;
+        text-decoration: none;
+    }
+
+    :hover.headerbottomtext{
+        color: red;
+    }
+
+    .searchbarcontainer{
+        position: absolute;
+        z-index: 1;
+        display: inline-flex;
+        right: 20px;
+        border: 0;
+        margin: 0;
+        top: 5px;
+    }
+
+    .searchbar{
+        background: rgb(240, 236, 217);
+        text-decoration-line: underline;
+        outline: none;
+    }
+
+    .leftheaderbottom{
+        position: absolute;
+        z-index: 1;
+        display: inline-flex;
+        left: 20px;
+        border: 0;
+        margin: 0;
+        top: 5px;
+        justify-content: space-between;
+        width: 55px;
+    }
+
+    .slogancontainer{
+        width: 100%;
+        height: 550px;
+        margin: 0px;
+        border: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        position: absolute;
+        z-index: -10;
+    }
+
+    .sloganbackground{
+        object-fit:none;
+        width: 100%;
+        height: 550px;
+        opacity: 0.3;
+        position: fixed;
+        z-index: 0;
+    }
+
+    .middleslogan{
+        height: auto;
+        width: auto;
+        z-index: 1;
+        border: 5px;
+        border-color: red;
+        color: white;
+        font-size: x-large;
+    }
+
+    .whiteline{
+        height: 3px;
+        width: 470px;
+        background-color:white;
+        margin: 15px;
+    }
+
+    #productbackground{
+        padding: 15px;
+        left: 50%;
+        margin-left: -475px;
+        height: 500px;
+        width: 950px;
+        margin-top: 400px;
+        z-index: 1;
+        position: fixed;
+        background-color: white;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .productimg{
+        width: 300px;
+        height: 400px;
+        display: inline-flex;
+        object-fit: fill;
+    }
+
+    .productcontainer{
+        width: 300px;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    .productcontainer h2{
+        margin-top: 20px;
+    }
+
+    .orangeunderline{
+        display: flex;
+        margin: 30px 0 30px 125px;
+        background-color:orange;
+        height: 5px;
+        width: 50px;
+    }
+
+    .productbutton{
+        height: 50px;
+        width: 200px;
+        border-radius: 25px;
+        border:1px solid black;
+        background: none;
+    }
+
+    .sale{
+        margin-top: 1000px;
+        height: 200px;
+        width: 100%;
+        display: block;
+    }
+
+    .sale img{
+        height: 300px;
+        width: 25%;
+    }
+
+    .saleleftpic{
+        display: inline-block;
+        float: left;
+        object-fit: cover;
+    }
+
+    .salerightpic{
+        display: inline-block;
+        float: right;
+        object-fit: cover;
+    }
+
+    .salemiddlecontainer{
+        width: 50%;
+        height: 300px;
+        display: inline-block;
+        background-color: red;
+        align-items: center;
+    }
+
+    .salemiddlecontainerinside{
+        text-align: center;
+        border: 2px solid white;
+        margin: 25px 50px 25px 50px;
+        padding-top: 5px;
+        color: white;
+        height: 250px;
+        align-items: center;
+        z-index: 0;
+    }
+    
+    .salebutton{
+        height: 30px;
+        width: 200px;
+        border-radius: 25px;
+        border:2px solid white;
+        background: none;
+        position: relative;
+        color: white;
+        z-index:1;
+        margin-top: 5px;
+    }
+
+    .shortwhiteline{
+        height: 3px;
+        width: 200px;
+        background-color:white;
+        margin: 25px 0px 25px 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #QNA{
+        width: 100%;
+        height: 500px;
+        display: block;
+        padding-top: 100px;
+    }
+
+    .QNAbackground{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        z-index: 0;
+        display: flex;
+        position: fixed;
+        
+    }
+
+    .QNAsection{
+        z-index: 1;
+        position: relative;
+        margin-top: 100px;
+    }
+    .no1{
+        width: 193px;
+    }
+
+    .no2{
+        width: 400px;
+    }
+
+    td ::placeholder{
+        color:red;
+        border: 2px solid red;
+    }
+
+    textarea{
+        color: red;
+        border:2px solid red;
+    }
+
+    #footer{
+        display: block;
+        position: fixed; 
+        background: #111;
+        height: auto;
+        width: 100%;
+        font-family: "Open Sans";
+        padding-top: 40px;
+        color: #fff;
+    }
+    .footer-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-content h3{
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+    }
+    .footer-content p {
+        max-width: 500px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+    }
+    .socials{
+        list-style:none ;
+        display: flex;
+        align-items: center;
+    justify-content:center ;
+    margin: 1rem 0 3rem 0;
+    }
+    .socials li{
+        margin: 0 10px;
+    }
+    .socials a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .socials a i{
+        font-size: 1.1rem;
+        transition: color .4s ease;
+
+    }
+    .socials a:hover i{
+        color: aqua;
+    }
+
+    .footer-bottom{
+        background: #000;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+    .footer-bottom b{
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+    }
+    .footer-bottom span {
+        text-transform: uppercase;
+        opacity: .4;
+        font-weight: 200;
+    }
+
+</style>
+
+<body>
+    <!--Title-->
+    <div id="header">
+        <h1 class="headertitle"><u>CỬA HÀNG GIÁNG SINH</u></h1>
+    </div>
+
+    <!--Navigation-->
+    <div class="headerbottom">
+
+
+            <nav class="headerbottomcontainer">
+                <a class="headerbottomtext" href="#header">HOME</a>
+                <a class="headerbottomtext" href="#productbackground">SẢN PHẨM</a>
+                <a class="headerbottomtext" href="#QNA">Q&A</a>
+                <a class="headerbottomtext" href="#footer">CONTACT US</a>
+            </nav>
+
+    <!--Search bar-->
+
+        <div class="searchbarcontainer">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Tìm kiếm sản phẩm" class="searchbar">
+        </div>
+
+
+    <!--Social Media Icons-->
+
+        <div class="leftheaderbottom">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+
+    <!--Christmas tree background-->
+
+    <div class="slogancontainer">
+        <img src="https://media1.popsugar-assets.com/files/thumbor/sbrzciYH82DHadTP2VwT4ZJtfR4/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2022/10/26/662/n/1922507/5aaba4dc635949dd829a68.35440347_sapan-patel-/i/Christmas-Zoom-Background-Tree-Decorations.jpg" alt="christmas tree" class="sloganbackground">
+
+        <div class="middleslogan">
+            <div class="whiteline"></div>
+            <h1><i>Holiday Special</i></h1>
+            <p>Đáp ứng tất cả nhu cầu Giáng Sinh</p>
+            <div class="whiteline"></div>
+        </div>
+    </div>
+
+    <!--Products-->
+
+    <div id="productbackground">
+        <div class="productcontainer">
+            <img src="https://cdn.shopify.com/s/files/1/0130/8226/3616/products/king-flock-artificial-christmas-tree_85d050d4-efb4-4675-867f-4cae1a1d4e98_420x.jpg?v=1663972217" alt="Chirstmastree" class="productimg">
+            <h2><i>Christmas Trees</i></h2>
+            <div class="orangeunderline"></div>
+            <a href=""><input type="button" value="Xem sản phẩm" class="productbutton"></a>
+        </div>
+
+        <div class="productcontainer">
+            <img src="https://images.pexels.com/photos/1674408/pexels-photo-1674408.jpeg?cs=srgb&dl=pexels-matthias-cooper-1674408.jpg&fm=jpg" alt="" class="productimg">
+            <h2><i>Unique Ornaments</i></h2>
+            <div class="orangeunderline"></div>
+            <a href=""><input type="button" value="Xem sản phẩm" class="productbutton"></a>
+        </div>
+
+        <div class="productcontainer">
+            <img src="data:image/jpeg;base64,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" alt="" class="productimg">
+            <h2><i>Holiday Lights</i></h2>
+            <div class="orangeunderline"></div>
+            <a href=""><input type="button" value="Xem sản phẩm" class="productbutton"></a>
+        </div>
+    </div>
+
+    <!--Sale-->
+
+    <div class="sale">
+
+        <img src="https://www.thesprucecrafts.com/thmb/tHDXBLDEtPT3rtr3EPtv5XS9L_A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1424355489-ec5fb8f0e1124aaf934941cf4e3b0899.jpg" class="saleleftpic" alt="">
+        
+        <div class="salemiddlecontainer">
+            <div class="salemiddlecontainerinside">
+                <h1><i>ĐẶT HÀNG ONLINE NGAY ĐỂ GIẢM GIÁ 10%</i></h1>
+                <div class="shortwhiteline"></div>
+                <h1><i>SỬ DỤNG MÃ GIẢM GIÁ:</i></h1>
+                <h1><i>"HOHOHO"</i></h1>
+
+                <a href=""><input type="button" value="MUA NGAY" class="salebutton"></a>
+            </div>
+        </div>
+
+        <img src="https://cdn.britannica.com/79/202379-131-1EEF7D5C/Christmas-tree-holiday-pine.jpg" class="salerightpic" alt="">
+
+    </div>
+
+    <!--QNA-->
+
+    <div id="QNA">
+
+        <img src="https://png.pngtree.com/background/20210715/original/pngtree-white-christmas-tree-branches-background-picture-image_1277645.jpg" alt="" class="QNAbackground">
+
+        <div class="QNAsection">
+            <form action="/experimental.html">
+            <center>
+                <h1 style="color: red;"  align="center">NẾU CÓ CÂU HỎI, HÃY ĐIỂN DƯỚI ĐÂY</h1>
+                <table> 
+                    <tr>
+                        <td><input class="no1" type="text" name="friame" placeholder="Tên" class="placeholder"></td>
+                        <td><input class="no1" type="text" name="friame" placeholder="Email" class="placeholder"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" > <input class="no2" type="text" name="friame" placeholder="Số điện thoại"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><textarea class="no2"  id="" cols="60" rows="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <input style="background-color:red ;color: white;border:none;width: 403px;" type="submit"></td>
+                    </tr>
+                </table>
+            </center>
+        </form> 
+        </div>
+    </div>
+
+    <!--footer-->
+
+    <div id="footer">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <p>Email: nguyentrongnamanh@gmail.com | 0909090909</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2023 <b>Nguyễn Trọng Nam Anh</b></p>
+        </div>
+    </div>
+</body>
+</html>
